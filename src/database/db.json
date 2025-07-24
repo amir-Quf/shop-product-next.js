@@ -3,24 +3,50 @@
     {
       "id": "1",
       "image": "../../images/bootstrap.jpeg",
-      "title": "article 1",
+      "title": "product 1",
       "desc": "1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
-      "price" : 25
-
+      "price": 25
     },
     {
       "id": "2",
       "image": "../../images/js.jpeg",
-      "title": "article 2",
+      "title": "product 2",
       "desc": "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
-      "price" : 84
+      "price": 84
     },
     {
       "id": "3",
       "image": "../../images/react.jpeg",
-      "title": "article 3",
+      "title": "product 3",
       "desc": "3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
-      "price" : 17
+      "price": 17
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "amir",
+      "password": "amir123",
+      "email": "amir@gmail.com",
+      "basket": [
+         {
+          "id" : "1",
+          "qty" : 1
+        },
+        {
+          "id" : "2",
+          "qty" : 3
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "username": "ali",
+      "password": "ali12",
+      "email": "ali@gmail.com",
+      "basket": [
+        "3"
+      ]
     }
   ]
 }

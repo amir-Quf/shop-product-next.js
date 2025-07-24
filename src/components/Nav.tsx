@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import Container from "../container/page";
+import Container from "./Container";
 import { BsCart4 } from "react-icons/bs";
 
 const Nav = () => {

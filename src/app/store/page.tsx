@@ -1,4 +1,4 @@
-import Container from '@/components/container/page'
+import Container from '@/components/Container'
 import Product from '@/components/cardProduct'
 import Link from 'next/link';
 import React from 'react'

@@ -1,5 +1,5 @@
 import React from 'react'
-import Container from '../../../components/container/page'
+import Container from '../../../components/Container'
 import { IProductData } from '../page'
 
 interface IProductProps {
