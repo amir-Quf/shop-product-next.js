@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React from 'react'
 
 export interface IProductData {
-    id?: string;
+    id: string;
     image: string;
     title: string;
     desc: string;
