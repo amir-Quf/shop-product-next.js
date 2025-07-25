@@ -5,21 +5,24 @@
       "image": "../../images/bootstrap.jpeg",
       "title": "product 1",
       "desc": "1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
-      "price": 25
+      "price": 25,
+      "discount" : 
     },
     {
       "id": "2",
       "image": "../../images/js.jpeg",
       "title": "product 2",
       "desc": "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
-      "price": 84
+      "price": 84,
+      "discount" : 9
     },
     {
       "id": "3",
       "image": "../../images/react.jpeg",
       "title": "product 3",
       "desc": "3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
-      "price": 17
+      "price": 17,
+      "discount" : 5
     }
   ],
   "users": [

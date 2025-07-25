@@ -9,6 +9,7 @@ export interface IProductData {
     title: string;
     desc: string;
     price : number;
+    discount : number
 }
 
 const Store = async () => {

@@ -22,7 +22,9 @@ const ProductDetails = async (props : IProductProps) => {
           <div>
             <h2 className='font-bold text-2xl'>{data.title}</h2>
             <p className='text-gray-600 py-4'>{data.desc}</p>
-            <p className='font-bold mb-3'>price : <span>$ {data.price}</span></p>
+            <p className='font-bold mb-3'>price : <span className={data.discount ? `line-through opacity-70` : ''}>$ {(data.price).toLocaleString()}</span>
+                    {data.discount ? <span className="ml-1 text-xl"> ${(Number((data.price - ((data.price * data.discount) / 100)).toFixed(1))).toLocaleString()}</span> : ''}
+                    {data.discount ? <p className="mt-3">discount : %{data.discount}</p> : ''}</p>
           </div>
             <CountOperators IdProduct={id}/>
         </div>
