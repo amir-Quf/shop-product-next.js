@@ -1,6 +1,7 @@
 import React from 'react'
 import Container from '../../../components/Container'
 import { IProductData } from '../page'
+import CountOperators from './components/countOperators';
 
 interface IProductProps {
     params : Promise<{id : string}>;
@@ -23,11 +24,7 @@ const ProductDetails = async (props : IProductProps) => {
             <p className='text-gray-600 py-4'>{data.desc}</p>
             <p className='font-bold mb-3'>price : <span>$ {data.price}</span></p>
           </div>
-            <div>
-            <button className='bg-cyan-500 px-3 rounded font-bold text-2xl'> + </button>
-            <span className='mx-2 font-bold text-lg'> 1 </span>
-            <button className='bg-red-500 px-3 rounded font-bold text-2xl'> - </button>
-            </div>
+            <CountOperators IdProduct={id}/>
         </div>
       </section>
     </Container>

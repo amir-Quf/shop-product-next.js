@@ -7,6 +7,7 @@ interface IBasketUser {
   removeFromBasket: (id: string) => void
   minusCountProduct: (id: string) => void
   clearBasket: () => void
+  getQty : (id : string) => number
 }
 
 interface IBasketData {
@@ -27,6 +28,7 @@ const useUserBasket = create<IBasketUser>()(
   },
   removeFromBasket : (id: string) => {
     set({basket: get().basket.filter((item: IBasketData) => item.id != id)})
+
   },
   minusCountProduct: (id: string) => {
     const countProduct = get().basket.find(item => item.id === id)
@@ -37,7 +39,12 @@ const useUserBasket = create<IBasketUser>()(
       set({basket: get().basket.map(item => item.id === id ? {...item, qty: item.qty - 1} : item)})
     }
   },
-  clearBasket: () => set({basket : []})
+  clearBasket: () => set({basket : []}),
+  getQty: (id) => {
+    const product = get().basket.filter(item => item.id == id)
+    const count = product[0].qty
+    return count
+  }
 }),
 {
   name: 'user-basket-storage',
