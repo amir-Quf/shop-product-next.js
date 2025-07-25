@@ -1,15 +1,24 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import Container from "@/components/Container";
 import { IProductData } from "../store/page";
+import useUserBasket from "@/zustand/userBasket/userBasket";
+import axios from "axios";
 
 
-const Basket = async () => {
-  const res = await fetch(`http://localhost:4000/products`)
-  const data : IProductData = await res.json()
-  const product = data
+const Basket =  () => {
+  const {basket} = useUserBasket()
+  const [allProducts, setAllProducts] = useState([])
+  useEffect(() => {
+    axios.get('http://localhost:4000/products')
+    .then(res => setAllProducts(res.data))
+  }, [basket])
   return(
     <Container>
       <section className='grid grid-cols-12 shadow-2xl p-4'>
+        {basket.map(product => {
+          return(
+            <>
         <div className='col-span-3'>
             <img src={product.image} alt={product.title}/>
         </div>
@@ -25,6 +34,9 @@ const Basket = async () => {
             <button className='bg-red-500 px-3 rounded font-bold text-2xl'> - </button>
             </div>
         </div>
+            </>
+          )
+        })}
       </section>
     </Container>
   );
