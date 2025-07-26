@@ -18,7 +18,7 @@ const Store = async () => {
   return (
 
     <Container>
-        <section className='grid grid-cols-4 gap-5 mt-5'>
+        <section className='grid grid-cols-4 gap-5 my-5'>
             {data.map((product : IProductData) => {
                 return (
                     <Link href={`/store/${product.id}`} key={product.id}>

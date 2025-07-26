@@ -10,8 +10,9 @@ const AddProduct = () => {
   const form = useFormik({
     initialValues : {title: '', image: '', price: 0, discount: 0, desc: ''},
     onSubmit: async (values,{setSubmitting,resetForm}) => {
+      const {data} = await axios.get('http://localhost:4000/products')
       const newProduct = {
-          id: 1,
+          id: String(data.length + 1),
           title: values.title,
           image: values.image,
           price: values.price,

@@ -25,7 +25,7 @@
       "discount": 5
     },
     {
-      "id": 1,
+      "id": "4",
       "title": "product 4",
       "image": "https://github.com/amir-Quf/Quf-learn/blob/main/src/assets/images/nextJs.jpeg?raw=true",
       "price": 105,

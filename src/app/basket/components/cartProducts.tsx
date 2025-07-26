@@ -58,11 +58,11 @@ useEffect(() => {
                 <div>
                   <h2 className="font-bold text-2xl">{product.title}</h2>
                   <p className="text-gray-600 py-4">{product.desc}</p>
-                  <p className="font-bold mb-3">
+                  <p className="font-bold mb-3 ">
                     price : <span className={product.discount ? `line-through opacity-70` : ''}>$ {(product.price).toLocaleString()}</span>
                     {product.discount ? <span className="ml-1 text-xl"> ${(Number((product.price - ((product.price * product.discount) / 100)).toFixed(1))).toLocaleString()}</span> : ''}
-                    {product.discount ? <p className="mt-3">discount : %{product.discount}</p> : ''}
                   </p>
+                    {product.discount ? <p className="mt-3 font-bold">discount : %{product.discount}</p> : ''}
                 </div>
                 <div className="flex items-center justify-between">
                 <div>
