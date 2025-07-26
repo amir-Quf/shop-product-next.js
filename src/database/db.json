@@ -27,9 +27,97 @@
     {
       "id": "4",
       "title": "product 4",
-      "image": "https://github.com/amir-Quf/Quf-learn/blob/main/src/assets/images/nextJs.jpeg?raw=true",
+      "image": "../../images/css.jpeg",
       "price": 105,
       "discount": 2,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "5",
+      "title": "product 5",
+      "image": "../../images/flexBox.jpeg",
+      "price": 187,
+      "discount": 14,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "6",
+      "title": "product 6",
+      "image": "../../images/npm.jpeg",
+      "price": 197,
+      "discount": 29,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "7",
+      "title": "product 7",
+      "image": "../../images/gitHub.jpeg",
+      "price": 138,
+      "discount": 26,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "8",
+      "title": "product 8",
+      "image": "../../images/css.jpeg",
+      "price": 142,
+      "discount": 8,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "9",
+      "title": "product 9",
+      "image": "../../images/html.jpeg",
+      "price": 83,
+      "discount": 19,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "10",
+      "title": "product 10",
+      "image": "../../images/nextJs.jpeg",
+      "price": 29,
+      "discount": 13,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "11",
+      "title": "product 11",
+      "image": "../../images/nodeJs.jpeg",
+      "price": 13,
+      "discount": 26,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "12",
+      "title": "product 12",
+      "image": "../../images/reactLibraries.jpeg",
+      "price": 93,
+      "discount": 92,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "13",
+      "title": "product 13",
+      "image": "../../images/scott-alpay.jpeg",
+      "price": 49,
+      "discount": 0,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "14",
+      "title": "product 14",
+      "image": "../../images/jade-stevens.jpeg",
+      "price": 56,
+      "discount": 37,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "15",
+      "title": "product 15",
+      "image": "../../images/marielle-moore.jpeg",
+      "price": 193,
+      "discount": 87,
       "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
     }
   ],
