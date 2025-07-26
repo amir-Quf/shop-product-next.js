@@ -6,7 +6,7 @@
       "title": "product 1",
       "desc": "1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
       "price": 25,
-      "discount" : 0
+      "discount": 0
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "title": "product 2",
       "desc": "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
       "price": 84,
-      "discount" : 9
+      "discount": 9
     },
     {
       "id": "3",
@@ -22,7 +22,15 @@
       "title": "product 3",
       "desc": "3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
       "price": 17,
-      "discount" : 5
+      "discount": 5
+    },
+    {
+      "id": 1,
+      "title": "product 4",
+      "image": "https://github.com/amir-Quf/Quf-learn/blob/main/src/assets/images/nextJs.jpeg?raw=true",
+      "price": 105,
+      "discount": 2,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
     }
   ],
   "users": [
@@ -32,13 +40,13 @@
       "password": "amir123",
       "email": "amir@gmail.com",
       "basket": [
-         {
-          "id" : "1",
-          "qty" : 1
+        {
+          "id": "1",
+          "qty": 1
         },
         {
-          "id" : "2",
-          "qty" : 3
+          "id": "2",
+          "qty": 3
         }
       ]
     },

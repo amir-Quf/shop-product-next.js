@@ -11,6 +11,7 @@ const Nav = () => {
   const navigationLinks = [
     { pathname: "Home", link: "/" },
     { pathname: "Store", link: "/store" },
+    { pathname: "Dashboard", link: "/dashboard" },
   ];
   const {basket} = useUserBasket()
   const totalCount = basket.reduce((prevCount, item) => {
