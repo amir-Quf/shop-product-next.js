@@ -27,7 +27,7 @@ const Nav = () => {
                     <li
                       className={`${
                         navActive == navigationData.link &&
-                        "border-b-2 border-b-black"
+                        "text-blue-500"
                       }`}
                       key={navigationData.link}
                     >

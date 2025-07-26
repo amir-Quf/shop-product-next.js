@@ -8,9 +8,9 @@ const Product = ({title, image, desc, price, discount} : IProductData) => {
             <img src={image} alt={title} className=''/>
             <div className='p-4'>
             <h3 className='font-bold mb-1'>{title}</h3>
-            <p className='font-bold mb-1'>price : <span className={discount ? `line-through opacity-70` : ''}>$ {(price).toLocaleString()}</span>
+            <p className={`font-bold ${discount ? 'mb-1' : 'mt-6 mb-6'}`}>price : <span className={discount ? `line-through opacity-70` : ''}>$ {(price).toLocaleString()}</span>
                     {discount ? <span className="ml-1 text-xl"> ${(Number((price - ((price * discount) / 100)).toFixed(1))).toLocaleString()}</span> : ''}
-                    {discount ? <p className="mt-1">discount : %{discount}</p> : ''}</p>
+                    {discount ? <p className="my-2">discount : %{discount}</p> : ''}</p>
             <p className='text-gray-600'>{desc}</p>
             </div>
         </div>

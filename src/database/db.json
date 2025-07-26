@@ -6,7 +6,7 @@
       "title": "product 1",
       "desc": "1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
       "price": 25,
-      "discount" : 
+      "discount" : 0
     },
     {
       "id": "2",
