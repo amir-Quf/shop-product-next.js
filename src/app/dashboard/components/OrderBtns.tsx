@@ -3,8 +3,10 @@
 import axios from "axios"
 import { IOrders } from "../orders/page"
 import Swal from "sweetalert2"
+import { useRouter } from "next/router"
 
-const ConfirmButton = ({order}: {order: IOrders}) => {
+const OrderBtns = ({order}: {order: IOrders}) => {
+    const router = useRouter()
     const confirmHandler = () => {
         axios.put(`http://localhost:4000/orders/${order.id}`,{
             ...order,
@@ -15,6 +17,7 @@ const ConfirmButton = ({order}: {order: IOrders}) => {
                 title: 'order successfully Confirmed',
                 icon: 'success'
             })
+            router.reload()
         })
         .catch((err) =>{
             Swal.fire({
@@ -33,6 +36,7 @@ const ConfirmButton = ({order}: {order: IOrders}) => {
                 title: 'order successfully rejected',
                 icon: 'warning'
             })
+            router.reload()
         })
         .catch((err) =>{
             Swal.fire({
@@ -49,4 +53,4 @@ const ConfirmButton = ({order}: {order: IOrders}) => {
   )
 }
 
-export default ConfirmButton
+export default OrderBtns
