@@ -14,7 +14,7 @@ interface IBasketUser {
   totalDiscount : () => Promise<number>
 }
 
-interface IBasketData {
+export interface IBasketData {
   id: string
   qty : number
 }

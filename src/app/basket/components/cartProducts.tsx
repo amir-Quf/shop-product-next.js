@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { IProductData } from "../../store/page";
 import useUserBasket from "@/zustand/userBasket/userBasket";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const CartProducts = () => {
     const [price, setPrice] = useState(0)
@@ -45,6 +46,23 @@ useEffect(() => {
   fetchDiscount();
 }, [totalDiscount, basket]);
 
+const orderHandler = async () => {
+  const {data} = await axios.get('http://localhost:4000/orders')
+  axios.post('http://localhost:4000/orders',{id: String(data.length + 1),status: "being reviewed",basket,})
+  .then(() => {
+    Swal.fire({
+      title: 'the order was successfully placed',
+      icon: 'success'
+    })
+    clearBasket()
+  })
+  .catch((err) => {
+    Swal.fire({
+      title: `Ordering an error : ${err}`,
+      icon: 'error'
+    })
+  })
+}
 
   return (
     <section>
@@ -105,7 +123,7 @@ useEffect(() => {
                 <p className="py-3">The final price : ${(price - discount).toLocaleString()}</p>
             </div>
             <div className="flex items-center justify-between pt-6">
-                <button className="hover:bg-green-600 bg-green-500 py-1 px-2 rounded shadow shadow-emerald-900">Place an order</button>
+                <button onClick={orderHandler} className="hover:bg-green-600 bg-green-500 py-1 px-2 rounded shadow shadow-emerald-900">Place an order</button>
                 <button onClick={() => clearBasket()} className="hover:bg-red-600 bg-red-500 py-1 px-2 rounded shadow shadow-red-900" >Delete Cart</button>
             </div>
         </div>

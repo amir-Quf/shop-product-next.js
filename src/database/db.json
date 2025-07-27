@@ -147,5 +147,22 @@
         "3"
       ]
     }
+  ],
+  "orders": [
+    {
+      "id": "2",
+      "user": "",
+      "status": "being reviewed",
+      "basket": [
+        {
+          "id": "1",
+          "qty": 2
+        },
+        {
+          "id": "2",
+          "qty": 1
+        }
+      ]
+    }
   ]
 }
