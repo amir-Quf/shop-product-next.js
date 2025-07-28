@@ -8,6 +8,8 @@ import axios from "axios";
 import { IOrders } from "@/app/dashboard/orders/page";
 import Swal from "sweetalert2";
 import { validationSchemaRegisterUser } from "@/validations/validationSchema";
+import useUserData from "@/zustand/userData/userData";
+import { useRouter } from "next/navigation";
 
 export interface IUserData {
   id: string,
@@ -16,24 +18,29 @@ export interface IUserData {
   address: string,
   username: string,
   phone: string,
+  role: "user" | "admin",
   orders: IOrders[],
 }
 
 const FormRegister = () => {
     const [showPassword, setShowPassword] = useState(false)
+    const router = useRouter()
+    const {setUser} = useUserData()
     const form = useFormik({
       initialValues : {username: '',phone: '09',password: '',confirmPassword: ''},
       onSubmit: async (values, {setSubmitting,resetForm}) => {
+        const {data} : {data : IUserData[]} = await axios.get('http://localhost:4000/users')
         const newUser = {
+          id : (data.length + 1).toString(),
           username: values.username,
           phone: values.phone,
           password: values.password,
           email: '',
           address: '',
+          role : 'user',
           orders: [],
         }
         try{
-          const {data} : {data : IUserData[]} = await axios.get('http://localhost:4000/users')
           data.map(user => {
             if(newUser.username === user.username){
               Swal.fire({
@@ -52,6 +59,8 @@ const FormRegister = () => {
                 icon: 'success',
               })
               resetForm()
+              setUser(newUser)
+              router.push('/store')
             }
           })
         } 
@@ -78,13 +87,13 @@ const FormRegister = () => {
       <label className="font-bold" htmlFor="">Password : </label>
         <div className="rounded bg-white flex items-center justify-between">
             <input type={showPassword ? 'text' : 'password'} name='password' value={form.values.password} onChange={form.handleChange} onBlur={form.handleBlur} className='p-2 focus:outline-0 w-full' placeholder='please enter password...'/>
-            <button onClick={() => setShowPassword(!showPassword)} className="mr-3 font-bold text-xl">{showPassword ? <FaEye/> : <FaEyeSlash/>}</button>
+            <button type="button" onClick={() => setShowPassword(!showPassword)} className="mr-3 font-bold text-xl">{showPassword ? <FaEye/> : <FaEyeSlash/>}</button>
         </div>
         {form.errors.password ? <p className="font-bold text-red-500">{form.errors.password && form.touched.password && form.errors.password}</p> : ''}
       <label className="font-bold" htmlFor="">Confirm password</label>
         <div className="rounded bg-white flex items-center justify-between">
             <input type={showPassword ? 'text' : 'password'} name='confirmPassword' value={form.values.confirmPassword} onChange={form.handleChange} onBlur={form.handleBlur} className='p-2 focus:outline-0 w-full' placeholder='please enter confirm password...'/>
-            <button onClick={() => setShowPassword(!showPassword)} className="mr-3 font-bold text-xl">{showPassword ? <FaEye/> : <FaEyeSlash/>}</button>
+            <button type="button" onClick={() => setShowPassword(!showPassword)} className="mr-3 font-bold text-xl">{showPassword ? <FaEye/> : <FaEyeSlash/>}</button>
         </div>
         {form.errors.confirmPassword ? <p className="font-bold text-red-500">{form.errors.confirmPassword && form.touched.confirmPassword && form.errors.confirmPassword}</p> : ''}
         <button className="bg-emerald-500 p-2 rounded mt-5 text-white font-bold">Sign up</button>

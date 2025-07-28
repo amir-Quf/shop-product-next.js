@@ -8,16 +8,20 @@ import axios from "axios";
 import { IUserData } from "@/app/register/components/FormRegister";
 import Swal from "sweetalert2";
 import { validationSchemaLoginUser } from "@/validations/validationSchema";
+import useUserData from "@/zustand/userData/userData";
+import { useRouter } from "next/navigation";
 
 const FormSubmitting = () => {
     const [showPassword, setShowPassword] = useState(false)
+    const router = useRouter()
+    const {setUser} = useUserData()
     const form = useFormik({
       initialValues: {userInformation : '', password : ''},
       onSubmit: async (values, {setSubmitting, resetForm}) => {
         try{
           const {data} : {data : IUserData[]} = await axios.get('http://localhost:4000/users')
           const isUser = data.find(user => {
-            if(user.username === values.userInformation || user.phone === values.userInformation || user.address === values.userInformation){
+            if(user.username === values.userInformation || user.phone === values.userInformation || user.email === values.userInformation){
                 return user
             }
           })
@@ -30,6 +34,8 @@ const FormSubmitting = () => {
                 timer: 2000
               })
               resetForm()
+              setUser(isUser)
+              router.push('/store')
             } else {
               Swal.fire({
                 title: 'password does not match.',
@@ -63,7 +69,7 @@ const FormSubmitting = () => {
             <label className="font-bold" htmlFor="">password : </label>
             <div className="rounded bg-white flex items-center justify-between">
               <input type={showPassword ? 'text' : 'password'} name='password' value={form.values.password} onChange={form.handleChange} onBlur={form.handleBlur} className='p-2 focus:outline-0 w-full' placeholder='please enter password...'/>
-              <button onClick={() => setShowPassword(!showPassword)} className="mr-3 font-bold text-xl">{showPassword ? <FaEye/> : <FaEyeSlash/>}</button>
+              <button type="button" onClick={() => setShowPassword(!showPassword)} className="mr-3 font-bold text-xl">{showPassword ? <FaEye/> : <FaEyeSlash/>}</button>
             </div>
               {form.errors.password ? <p className="font-bold text-red-500">{form.errors.password && form.touched.password && form.errors.password}</p> : ''}
             <button className='bg-emerald-500 rounded py-2 mt-5 text-white shadow shadow-emerald-700'>Login</button>

@@ -5,10 +5,12 @@ import useUserBasket from "@/zustand/userBasket/userBasket";
 import axios from "axios";
 import Swal from "sweetalert2";
 import OrdersUser from "./ordersUser";
+import useUserData from "@/zustand/userData/userData";
 
 const CartProducts = () => {
     const [price, setPrice] = useState(0)
     const [discount, setDiscount] = useState(0);
+    const {user} = useUserData()
     const {
     basket,
     addToBasket,
@@ -49,7 +51,7 @@ useEffect(() => {
 
 const orderHandler = async () => {
   const {data} = await axios.get('http://localhost:4000/orders')
-  axios.post('http://localhost:4000/orders',{id: String(data.length + 1),status: "being reviewed",basket,})
+  axios.post('http://localhost:4000/orders',{id: String(data.length + 1),status: "being reviewed",basket, user})
   .then(() => {
     Swal.fire({
       title: 'the order was successfully placed',

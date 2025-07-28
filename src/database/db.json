@@ -129,6 +129,7 @@
       "email": "amir@gmail.com",
       "phone": "+989015532324",
       "address": "iran-mashhad-23rd street-No.12",
+      "role" : "admin",
       "orders": [
         {
           "id": "1",
@@ -147,6 +148,7 @@
       "email": "ali@gmail.com",
       "phone": "+989155232324",
       "address": "iran-mashhad-45rd street-No.116",
+      "role" : "user",
       "orders": [
         {
           "id": "4",
