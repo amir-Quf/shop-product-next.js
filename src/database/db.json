@@ -1,0 +1,207 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "image": "../../images/bootstrap.jpeg",
+      "title": "product 1",
+      "desc": "1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
+      "price": 25,
+      "discount": 0
+    },
+    {
+      "id": "2",
+      "image": "../../images/js.jpeg",
+      "title": "product 2",
+      "desc": "2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
+      "price": 84,
+      "discount": 9
+    },
+    {
+      "id": "3",
+      "image": "../../images/react.jpeg",
+      "title": "product 3",
+      "desc": "3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore voluptatem recusandae, eius saepe odit libero officiis reiciendis quo.Atque quis asperiores deleniti aut ipsum? Nulla molestiae soluta rerum cupiditate ea?",
+      "price": 17,
+      "discount": 5
+    },
+    {
+      "id": "4",
+      "title": "product 4",
+      "image": "../../images/css.jpeg",
+      "price": 105,
+      "discount": 2,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "5",
+      "title": "product 5",
+      "image": "../../images/flexBox.jpeg",
+      "price": 187,
+      "discount": 14,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "6",
+      "title": "product 6",
+      "image": "../../images/npm.jpeg",
+      "price": 197,
+      "discount": 29,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "7",
+      "title": "product 7",
+      "image": "../../images/gitHub.jpeg",
+      "price": 138,
+      "discount": 26,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "8",
+      "title": "product 8",
+      "image": "../../images/css.jpeg",
+      "price": 142,
+      "discount": 8,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "9",
+      "title": "product 9",
+      "image": "../../images/html.jpeg",
+      "price": 83,
+      "discount": 19,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "10",
+      "title": "product 10",
+      "image": "../../images/nextJs.jpeg",
+      "price": 29,
+      "discount": 13,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "11",
+      "title": "product 11",
+      "image": "../../images/nodeJs.jpeg",
+      "price": 13,
+      "discount": 26,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "12",
+      "title": "product 12",
+      "image": "../../images/reactLibraries.jpeg",
+      "price": 93,
+      "discount": 92,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "13",
+      "title": "product 13",
+      "image": "../../images/scott-alpay.jpeg",
+      "price": 49,
+      "discount": 0,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "14",
+      "title": "product 14",
+      "image": "../../images/jade-stevens.jpeg",
+      "price": 56,
+      "discount": 37,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    },
+    {
+      "id": "15",
+      "title": "product 15",
+      "image": "../../images/marielle-moore.jpeg",
+      "price": 193,
+      "discount": 87,
+      "desc": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. At quod amet quia saepe consequuntur velit ad quis doloremque libero in, ullam suscipit expedita recusandae omnis tempora eius veniam quam quaerat!"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "amir",
+      "password": "amir123",
+      "email": "amir@gmail.com",
+<<<<<<< HEAD
+      "basket": [
+=======
+      "phone" : "+989015532324",
+      "address": "iran-mashhad-23rd street-No.12",
+      "orders": [
+>>>>>>> ae9b2a6 (initial commit)
+        {
+          "id": "1",
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "qty": 3
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "username": "ali",
+      "password": "ali12",
+      "email": "ali@gmail.com",
+<<<<<<< HEAD
+      "basket": [
+        "3"
+=======
+      "phone" : "+989155232324",
+      "address": "iran-mashhad-45rd street-No.116",
+      "orders": [
+        {
+          "id": "4",
+          "qty": 1
+        }
+>>>>>>> ae9b2a6 (initial commit)
+      ]
+    }
+  ],
+  "orders": [
+    {
+<<<<<<< HEAD
+      "id": "2",
+      "user": "",
+      "status": "sending",
+=======
+      "id": "1",
+      "status": "being reviewed",
+      "user" : {
+      "id": "1",
+      "username": "amir",
+      "password": "amir123",
+      "email": "amir@gmail.com",
+      "phone" : "+989015532324",
+      "address": "iran-mashhad-23rd street-No.12",
+      "orders": [
+        {
+          "id": "1",
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "qty": 3
+        }
+      ]
+    },
+>>>>>>> ae9b2a6 (initial commit)
+      "basket": [
+        {
+          "id": "1",
+          "qty": 2
+        },
+        {
+          "id": "2",
+          "qty": 1
+        }
+      ]
+    }
+  ]
+}
