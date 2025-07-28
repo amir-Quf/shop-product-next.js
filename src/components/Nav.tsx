@@ -12,13 +12,7 @@ const Nav = () => {
     { pathname: "Home", link: "/" },
     { pathname: "Store", link: "/store" },
     { pathname: "Dashboard", link: "/dashboard" },
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
     { pathname: "Login", link: "/login" },
->>>>>>> ae9b2a6 (initial commit)
-=======
->>>>>>> c932dd375003eae1c0be7ab1420fb2b4cef6aa94
   ];
   const {basket} = useUserBasket()
   const totalCount = basket.reduce((prevCount, item) => {

@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import { IOrders, IProductInOrder } from '../orders/page';
 import { IProductData } from '@/app/store/page';
@@ -22,13 +23,10 @@ const OrderDetails = ({order,data,allProducts} : {order : IOrders, data: IOrders
         .filter(Boolean) as IProductInOrder[]
   );
   return (
-    <div
-            className="font-bold shadow bg-gray-200 p-3 rounded"
-            key={order.id}
-          >
+    <div className="font-bold shadow bg-gray-200 p-3 rounded">
             <h3>order ID : {order.id}</h3>
             <h3>Status : <strong className={order.status === 'being reviewed' ? 'text-yellow-500' : order.status === 'delivered' ? 'text-green-500' : order.status === 'rejected' ? 'text-red-500' : order.status === 'sending' ? 'text-blue-500' : 'text-black'}>{order.status}</strong></h3>
-            <h3>User address : {order.user}</h3>
+            <h3>User address : {order.user.address}</h3>
             <h3 className="mt-2 pt-2 border-t-1">Products : </h3>
             {matchedProduct.map((product) => {
               return (

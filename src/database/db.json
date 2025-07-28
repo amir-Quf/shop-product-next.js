@@ -127,7 +127,7 @@
       "username": "amir",
       "password": "amir123",
       "email": "amir@gmail.com",
-      "phone" : "+989015532324",
+      "phone": "+989015532324",
       "address": "iran-mashhad-23rd street-No.12",
       "orders": [
         {
@@ -145,7 +145,7 @@
       "username": "ali",
       "password": "ali12",
       "email": "ali@gmail.com",
-      "phone" : "+989155232324",
+      "phone": "+989155232324",
       "address": "iran-mashhad-45rd street-No.116",
       "orders": [
         {
@@ -158,25 +158,25 @@
   "orders": [
     {
       "id": "1",
-      "status": "being reviewed",
-      "user" : {
-      "id": "1",
-      "username": "amir",
-      "password": "amir123",
-      "email": "amir@gmail.com",
-      "phone" : "+989015532324",
-      "address": "iran-mashhad-23rd street-No.12",
-      "orders": [
-        {
-          "id": "1",
-          "qty": 1
-        },
-        {
-          "id": "2",
-          "qty": 3
-        }
-      ]
-    },
+      "status": "sending",
+      "user": {
+        "id": "1",
+        "username": "amir",
+        "password": "amir123",
+        "email": "amir@gmail.com",
+        "phone": "+989015532324",
+        "address": "iran-mashhad-23rd street-No.12",
+        "orders": [
+          {
+            "id": "1",
+            "qty": 1
+          },
+          {
+            "id": "2",
+            "qty": 3
+          }
+        ]
+      },
       "basket": [
         {
           "id": "1",

@@ -1,9 +1,8 @@
 'use client'
-
 import axios from "axios"
 import { IOrders } from "../orders/page"
 import Swal from "sweetalert2"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 const OrderBtns = ({order}: {order: IOrders}) => {
     const router = useRouter()
@@ -17,7 +16,7 @@ const OrderBtns = ({order}: {order: IOrders}) => {
                 title: 'order successfully Confirmed',
                 icon: 'success'
             })
-            router.reload()
+            router.refresh()
         })
         .catch((err) =>{
             Swal.fire({

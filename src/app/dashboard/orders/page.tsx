@@ -3,11 +3,12 @@ import Container from "@/components/Container";
 import { IBasketData } from "@/zustand/userBasket/userBasket";
 import React from "react";
 import Orders from "../components/Orders";
+import { IUserData } from "@/app/register/components/FormRegister";
 
 export interface IOrders {
   id: string;
   basket: IBasketData[];
-  user: string;
+  user: IUserData;
   status: "being reviewed" | "sending" | "rejected" | "delivered";
 }
 

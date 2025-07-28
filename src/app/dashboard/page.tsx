@@ -1,6 +1,5 @@
 import React from 'react'
 import Container from '@/components/Container'
-import Menu from './components/menu'
 import Link from 'next/link'
 const Dashboard = () => {
   return (

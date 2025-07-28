@@ -1,22 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c932dd375003eae1c0be7ab1420fb2b4cef6aa94
-import { IOrders } from '@/app/dashboard/orders/page'
-import React from 'react'
 
-const OrdersUser = async () => {
-    const res = await fetch('http://localhost:4000/orders')
-    const data = (await res.json()) as IOrders[]
-    data.filter(order => {
-        return order.user == ''
-    })
-  return (
-    <div>
-      
-    </div>
-<<<<<<< HEAD
-=======
 'use client'
 import { IOrders, IProductInOrder } from '@/app/dashboard/orders/page'
 import { IProductData } from '@/app/store/page'
@@ -48,7 +30,7 @@ const OrdersUser = ({allProducts} : {allProducts : IProductData[]}) => {
   )
   return (
     <>
-    {userOrders ? <h2 className='mt-5 font-bold'>Orders List : </h2> : 'you have not registered orders.'}
+    {userOrders.length ? <h2 className='mt-5 font-bold'>Orders List : </h2> : ''}
     {userOrders.map((order) => (
       <section key={order.id} className='bg-gray-400 rounded p-4 mt-4'>
         <h3 className='text-xl'>order status: {order.status}</h3>
@@ -67,9 +49,6 @@ const OrdersUser = ({allProducts} : {allProducts : IProductData[]}) => {
     </section>
     ))}
     </>
->>>>>>> ae9b2a6 (initial commit)
-=======
->>>>>>> c932dd375003eae1c0be7ab1420fb2b4cef6aa94
   )
 }
 
