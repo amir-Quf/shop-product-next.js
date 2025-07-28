@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c932dd375003eae1c0be7ab1420fb2b4cef6aa94
 import { IOrders } from '@/app/dashboard/orders/page'
 import React from 'react'
 
@@ -12,6 +15,7 @@ const OrdersUser = async () => {
     <div>
       
     </div>
+<<<<<<< HEAD
 =======
 'use client'
 import { IOrders, IProductInOrder } from '@/app/dashboard/orders/page'
@@ -64,6 +68,8 @@ const OrdersUser = ({allProducts} : {allProducts : IProductData[]}) => {
     ))}
     </>
 >>>>>>> ae9b2a6 (initial commit)
+=======
+>>>>>>> c932dd375003eae1c0be7ab1420fb2b4cef6aa94
   )
 }
 

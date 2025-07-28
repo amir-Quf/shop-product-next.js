@@ -5,9 +5,12 @@ import useUserBasket from "@/zustand/userBasket/userBasket";
 import axios from "axios";
 import Swal from "sweetalert2";
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import OrdersUser from "./ordersUser";
 >>>>>>> ae9b2a6 (initial commit)
+=======
+>>>>>>> c932dd375003eae1c0be7ab1420fb2b4cef6aa94
 
 const CartProducts = () => {
     const [price, setPrice] = useState(0)
@@ -71,9 +74,12 @@ const orderHandler = async () => {
   return (
     <section>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
       <OrdersUser allProducts={allProducts}/>
 >>>>>>> ae9b2a6 (initial commit)
+=======
+>>>>>>> c932dd375003eae1c0be7ab1420fb2b4cef6aa94
         {productFiltered.map((product) => {
           return (
             <div key={product.id} className="grid grid-cols-12 shadow-lg p-4">
