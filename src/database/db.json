@@ -127,13 +127,9 @@
       "username": "amir",
       "password": "amir123",
       "email": "amir@gmail.com",
-<<<<<<< HEAD
-      "basket": [
-=======
       "phone" : "+989015532324",
       "address": "iran-mashhad-23rd street-No.12",
       "orders": [
->>>>>>> ae9b2a6 (initial commit)
         {
           "id": "1",
           "qty": 1
@@ -149,10 +145,6 @@
       "username": "ali",
       "password": "ali12",
       "email": "ali@gmail.com",
-<<<<<<< HEAD
-      "basket": [
-        "3"
-=======
       "phone" : "+989155232324",
       "address": "iran-mashhad-45rd street-No.116",
       "orders": [
@@ -160,17 +152,11 @@
           "id": "4",
           "qty": 1
         }
->>>>>>> ae9b2a6 (initial commit)
       ]
     }
   ],
   "orders": [
     {
-<<<<<<< HEAD
-      "id": "2",
-      "user": "",
-      "status": "sending",
-=======
       "id": "1",
       "status": "being reviewed",
       "user" : {
@@ -191,7 +177,6 @@
         }
       ]
     },
->>>>>>> ae9b2a6 (initial commit)
       "basket": [
         {
           "id": "1",
