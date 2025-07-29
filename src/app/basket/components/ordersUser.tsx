@@ -2,12 +2,14 @@
 'use client'
 import { IOrders, IProductInOrder } from '@/app/dashboard/orders/page'
 import { IProductData } from '@/app/store/page'
+import useUserData from '@/zustand/userData/userData'
 import axios from 'axios'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 const OrdersUser = ({allProducts} : {allProducts : IProductData[]}) => {
   const [data, setData] = useState<IOrders[]>([])
+  const {user} = useUserData()
   useEffect(() => {
     const fetchingOrders = async () => {
       const {data} = await axios.get('http://localhost:4000/orders')
@@ -16,7 +18,7 @@ const OrdersUser = ({allProducts} : {allProducts : IProductData[]}) => {
     fetchingOrders()
   }, [])
     const userOrders : IOrders[] = data.filter(order => {
-        return order.user === ''
+        return order.user.id === user.id
     })
     const orders : IProductInOrder[] = userOrders.flatMap(order => order.basket.map(userOrder => {
       const product = allProducts.find(product => userOrder.id === product.id)

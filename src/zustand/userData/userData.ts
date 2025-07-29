@@ -1,11 +1,35 @@
-import { IUserData } from '@/app/register/components/FormRegister'
 import {create} from 'zustand'
 import { persist } from 'zustand/middleware'
+import { IBasketData } from '../userBasket/userBasket';
+
+interface IUserOrder {
+  status: 'being reviewed' | 'sending' | 'rejected' | 'delivered';
+  basket: IBasketData[];
+  id: string;
+}
+
+interface IUserDataState {
+  id: string,
+  password: string,
+  email: string,
+  address: string,
+  username: string,
+  phone: string,
+  role: "user" | "admin",
+  orders: IOrdersState[],
+}
+
+interface IOrdersState {
+  id: string;
+  basket: IBasketData[];
+  status: "being reviewed" | "sending" | "rejected" | "delivered";
+}
 
 interface IUserState {
-    user : IUserData
-    setUser : (userDetails : IUserData) => void
+    user : IUserDataState
+    setUser : (userDetails : IUserDataState) => void
     singOutUser : () => void
+    updateOrdersUser : ({status,basket,id} : IUserOrder) => void
 }
 
 const useUserData = create<IUserState>()(persist((set, get) => ({
@@ -16,10 +40,10 @@ const useUserData = create<IUserState>()(persist((set, get) => ({
         email: '',
         phone: '',
         address: '',
-        role: '',
+        role: 'user',
         orders: []
     },
-    setUser : (userDetails : IUserData) => {
+    setUser : (userDetails : IUserDataState) => {
         set({user : userDetails})
     },
     singOutUser : () => {
@@ -29,8 +53,11 @@ const useUserData = create<IUserState>()(persist((set, get) => ({
         email: '',
         phone: '',
         address: '',
-        role: '',
+        role: 'user',
         orders: []}})
+    },
+    updateOrdersUser : ({status,basket,id} : IUserOrder) => {
+        set({user : {...get().user, orders : [...get().user.orders, {status, basket, id}]}})
     }
 }),
 {

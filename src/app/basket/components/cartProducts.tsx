@@ -10,7 +10,7 @@ import useUserData from "@/zustand/userData/userData";
 const CartProducts = () => {
     const [price, setPrice] = useState(0)
     const [discount, setDiscount] = useState(0);
-    const {user} = useUserData()
+    const {user,updateOrdersUser} = useUserData()
     const {
     basket,
     addToBasket,
@@ -50,22 +50,36 @@ useEffect(() => {
 }, [totalDiscount, basket]);
 
 const orderHandler = async () => {
-  const {data} = await axios.get('http://localhost:4000/orders')
-  axios.post('http://localhost:4000/orders',{id: String(data.length + 1),status: "being reviewed",basket, user})
-  .then(() => {
-    Swal.fire({
-      title: 'the order was successfully placed',
-      icon: 'success'
+  if(basket.length){
+    const {data} = await axios.get('http://localhost:4000/orders')
+    axios.post('http://localhost:4000/orders',{id: String(data.length + 1),status: "being reviewed",basket, user})
+    .then(() => {
+      axios.put(`http://localhost:4000/users${user.id}`,{...user, orders: [...user.orders, {id: String(data.length + 1),status: "being reviewed",basket}]})
+      .then(() => {
+        updateOrdersUser({id: String(data.length + 1),status: "being reviewed",basket})
+        Swal.fire({
+          title: 'the order was successfully placed',
+          icon: 'success'
+        })
+      })
     })
-    clearBasket()
-  })
-  .catch((err) => {
-    Swal.fire({
-      title: `Ordering an error : ${err}`,
-      icon: 'error'
+    .catch((err) => {
+      Swal.fire({
+        title: `Ordering an error : ${err}`,
+        icon: 'error'
+      })
     })
-  })
-}
+    
+  } else {
+    Swal.fire({
+      title: 'your basket is empty',
+      icon: 'error',
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true
+    })
+  }
+  }
 
   return (
     <section>
