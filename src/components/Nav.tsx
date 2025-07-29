@@ -6,14 +6,20 @@ import Container from "./Container";
 import { BsCart4 } from "react-icons/bs";
 import useUserBasket from "@/zustand/userBasket/userBasket";
 import useUserData from "@/zustand/userData/userData";
-
+import Cookie from 'js-cookie'
 const Nav = () => {
   const navActive: string = usePathname();
   const {singOutUser,user} = useUserData()
   const {basket} = useUserBasket()
+  const cookie = Cookie.get('token')
   const totalCount = basket.reduce((prevCount, item) => {
     return prevCount + item.qty
   }, 0)
+
+  const singOutHandler = () => {
+    singOutUser()
+    Cookie?.remove('token')
+  }
   return (
     <nav className="p-5 bg-gray-200">
       <Container>
@@ -28,10 +34,10 @@ const Nav = () => {
                     {user.role === 'admin' ? (<li className={`${navActive == '/dashboard' &&"text-blue-500"}`}>
                       <Link href='/dashboard' >Dashboard</Link>
                     </li>) : ''}
-                    {!user.phone ? (<li className={`${navActive == '/login' &&"text-blue-500"}`}>
+                    {!cookie ? (<li className={`${navActive == '/login' &&"text-blue-500"}`}>
                       <Link href='/login' >Login</Link>
                     </li>) : (
-                      <li onClick={() => singOutUser()} className={`${navActive == '/login' &&"text-blue-500"}`}>
+                      <li onClick={singOutHandler} className={`${navActive == '/login' &&"text-blue-500"}`}>
                         <Link href='/store'>LogOut</Link>
                       </li>
                     )}

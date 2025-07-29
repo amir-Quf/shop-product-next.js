@@ -10,7 +10,7 @@ const validationSchemaAddProduct = Yup.object().shape({
 
 const validationSchemaRegisterUser = Yup.object().shape({
     username : Yup.string().min(3,'Username must be at least 3 characters long.').max(20, 'Username can have a maximum of 20 characters').matches(/^[\w]+$/, 'Username can only contain uppercase A-Z, lowercase a-z, numbers and _ .').required('this field is required'),
-    phone: Yup.string().matches(/[0-9]{11}/, 'The phone number must be entered using numbers and be 11 digits').required('this field is required'),
+    phone: Yup.string().max(11,'The phone number must be entered using numbers and be 11 digits').matches(/[0-9]{11}/, 'The phone number must be entered using numbers and be 11 digits').required('this field is required'),
     password: Yup.string().min(4, 'Password must be at least 4 characters long.').max(20, 'Password can have a maximum of 20 characters').required('this field is required'),
     confirmPassword: Yup.string().min(4, 'Password must be at least 4 characters long.').max(20, 'Password can have a maximum of 20 characters').oneOf([Yup.ref('password')], 'The repetition does not match the password.').required('this field is required'),
 })

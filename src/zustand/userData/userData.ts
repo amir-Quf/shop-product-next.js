@@ -2,12 +2,6 @@ import {create} from 'zustand'
 import { persist } from 'zustand/middleware'
 import { IBasketData } from '../userBasket/userBasket';
 
-interface IUserOrder {
-  status: 'being reviewed' | 'sending' | 'rejected' | 'delivered';
-  basket: IBasketData[];
-  id: string;
-}
-
 interface IUserDataState {
   id: string,
   password: string,
@@ -18,8 +12,7 @@ interface IUserDataState {
   role: "user" | "admin",
   orders: IOrdersState[],
 }
-
-interface IOrdersState {
+export interface IOrdersState {
   id: string;
   basket: IBasketData[];
   status: "being reviewed" | "sending" | "rejected" | "delivered";
@@ -29,7 +22,7 @@ interface IUserState {
     user : IUserDataState
     setUser : (userDetails : IUserDataState) => void
     singOutUser : () => void
-    updateOrdersUser : ({status,basket,id} : IUserOrder) => void
+    updateOrdersUser : ({status,basket,id} : IOrdersState) => void
 }
 
 const useUserData = create<IUserState>()(persist((set, get) => ({
@@ -56,7 +49,7 @@ const useUserData = create<IUserState>()(persist((set, get) => ({
         role: 'user',
         orders: []}})
     },
-    updateOrdersUser : ({status,basket,id} : IUserOrder) => {
+    updateOrdersUser : ({status,basket,id} : IOrdersState) => {
         set({user : {...get().user, orders : [...get().user.orders, {status, basket, id}]}})
     }
 }),

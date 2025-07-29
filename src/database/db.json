@@ -129,7 +129,7 @@
       "email": "amir@gmail.com",
       "phone": "+989015532324",
       "address": "iran-mashhad-23rd street-No.12",
-      "role" : "admin",
+      "role": "admin",
       "orders": [
         {
           "id": "1",
@@ -148,13 +148,23 @@
       "email": "ali@gmail.com",
       "phone": "+989155232324",
       "address": "iran-mashhad-45rd street-No.116",
-      "role" : "user",
+      "role": "user",
       "orders": [
         {
           "id": "4",
           "qty": 1
         }
       ]
+    },
+    {
+      "id": "3",
+      "username": "jade_stevens",
+      "phone": "091112314151",
+      "password": "jade11",
+      "email": "",
+      "address": "",
+      "role": "user",
+      "orders": []
     }
   ],
   "orders": [

@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 import { validationSchemaLoginUser } from "@/validations/validationSchema";
 import useUserData from "@/zustand/userData/userData";
 import { useRouter } from "next/navigation";
-
+import Cookie from 'js-cookie'
 const FormSubmitting = () => {
     const [showPassword, setShowPassword] = useState(false)
     const router = useRouter()
@@ -33,9 +33,16 @@ const FormSubmitting = () => {
                 showConfirmButton: false,
                 timer: 2000
               })
+              const response = {
+                token: `Token${isUser.username}`,
+                expire: 7
+              }
+              Cookie.set('token', response.token, {expires: response.expire})
               resetForm()
               setUser(isUser)
-              router.push('/store')
+              setTimeout(() => {
+                router.push('/store')
+              }, 500);
             } else {
               Swal.fire({
                 title: 'password does not match.',

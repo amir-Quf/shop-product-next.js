@@ -5,12 +5,11 @@ import { useState } from "react";
 import Link from "next/link";
 import { useFormik } from "formik";
 import axios from "axios";
-import { IOrders } from "@/app/dashboard/orders/page";
 import Swal from "sweetalert2";
 import { validationSchemaRegisterUser } from "@/validations/validationSchema";
-import useUserData from "@/zustand/userData/userData";
+import useUserData, { IOrdersState } from "@/zustand/userData/userData";
 import { useRouter } from "next/navigation";
-
+import Cookie from 'js-cookie'
 export interface IUserData {
   id: string,
   password: string,
@@ -19,7 +18,7 @@ export interface IUserData {
   username: string,
   phone: string,
   role: "user" | "admin",
-  orders: IOrders[],
+  orders: IOrdersState[],
 }
 
 const FormRegister = () => {
@@ -30,39 +29,46 @@ const FormRegister = () => {
       initialValues : {username: '',phone: '09',password: '',confirmPassword: ''},
       onSubmit: async (values, {setSubmitting,resetForm}) => {
         const {data} : {data : IUserData[]} = await axios.get('http://localhost:4000/users')
-        const newUser = {
+        const newUser : IUserData = {
           id : (data.length + 1).toString(),
           username: values.username,
           phone: values.phone,
           password: values.password,
           email: '',
           address: '',
-          role : 'user',
+          role : "user",
           orders: [],
         }
         try{
-          data.map(user => {
-            if(newUser.username === user.username){
+          const isUsernameTaken = data.some(user => user.username === newUser.username)
+          const isPhoneTaken = data.some(user => user.phone === newUser.phone)
+            if(isUsernameTaken){
               Swal.fire({
                 title: 'A user with this username already exists',
                 icon: 'error',
-              }) 
-            }else if(newUser.phone === user.phone){
+              })
+              return;
+            }else if(isPhoneTaken){
               Swal.fire({
                 title: 'A user with this phone number already exists',
                 icon: 'error',
               })
+              return;
             }else{
-              axios.post('http://localhost:4000/users',newUser)
+              await axios.post('http://localhost:4000/users',newUser)
               Swal.fire({
                 title: 'an account registered successfully',
                 icon: 'success',
               })
+              const response = {
+                token: `Token${newUser.username}`,
+                expire: 7
+              }
+              Cookie.set('token', response.token, {expires: response.expire})
               resetForm()
               setUser(newUser)
               router.push('/store')
             }
-          })
         } 
         catch (err) {
           Swal.fire({
